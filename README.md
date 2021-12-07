@@ -14,5 +14,8 @@ open backend_server folder
 run the command:
 ```sh
 npm install
+```
+
+```sh
 node index.js
 ```
