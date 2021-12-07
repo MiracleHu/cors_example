@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nginx Tutorial</title>
+</head>
+<body>
+  <h1>Here is the demo for nginx</h1>
+  <script>
+    console.log('hahaha');
+    // fetch('http://127.0.0.1:3000/api/data'); // 简单请求
+
+    fetch('http://127.0.0.1:3000/api/data', {  //非简单请求，这个请求启动前会被浏览器自动插入一个options/preflight 请求
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'text/plain',
+        'Test-Cors': 'abc'
+      }
+    });
+
+  </script>
+</body>
+</html>
