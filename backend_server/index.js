@@ -4,6 +4,15 @@ const app = express();
 const port = 3000;
 
 app.use(cors());
+/* app.use(cors()) 相当于加上了以下 header
+app.options('/api/data', (req, res) => {
+  res.header('Access-Controll-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'test-cors');
+  res.end;
+});
+*/
+
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
