@@ -8,7 +8,7 @@ app.use(cors());
 app.options('/api/data', (req, res) => {
   res.header('Access-Controll-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'test-cors');
+  res.header('Access-Control-Allow-Headers', 'test-cors, content-type');
   res.end;
 });
 */
