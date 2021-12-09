@@ -18,6 +18,14 @@
       }
     });
 
+    // websocket没有CORS的限制
+    const socket = new WebSocket('ws://localhost:3001');
+    socket.onopen = () => {
+      socket.send('I have a dream');
+    };
+    socket.onmessage = (e) => {
+      console.log(e.data);
+    };
   </script>
 </body>
 </html>

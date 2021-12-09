@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const WebSocket = require('ws');
 const app = express();
 const port = 3000;
 
@@ -28,4 +29,13 @@ app.put('/api/data', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
+});
+
+// 一个端口号只能起一种类型的服务， 3000端口作为http服务， 3001作为websocket服务
+const wss = new WebSocket.Server({port: 3001});
+wss.on('connection', (ws) => {
+  ws.on('message', (data) => {
+    console.log(data);
+    ws.send('I love you');
+  });
 });
